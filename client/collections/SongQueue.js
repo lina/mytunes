@@ -5,8 +5,7 @@ var SongQueue = Songs.extend({
   },
 
   playFirst: function(){
-    console.log(this);
-    this.set('currentSong', this.at(0));
+    this.at(0).play();
   }
 
 });
