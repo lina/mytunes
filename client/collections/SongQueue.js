@@ -3,7 +3,6 @@ var SongQueue = Songs.extend({
 
   initialize: function(){
     this.on('add', function() {
-      console.log("SongQueue file");
       if(this.length === 1){  
         this.playFirst();
       }
@@ -13,21 +12,16 @@ var SongQueue = Songs.extend({
       if(this.length) {
         this.playFirst();         
       }
-      // this.remove(song);
     })
     this.on('dequeue',function() {
       this.remove(this.at(0));
     })
-    //start
-    // this.$el.on('ended', function(e) {
-    //   console.log("playerview end trigger");
-    //   that.model.ended();
-    // })
+
 
   },
 
   playFirst: function(){
-    this.at(0).play();
+    this.first().play();
   }
 
 });
